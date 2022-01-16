@@ -1,0 +1,23 @@
+name: API
+main: com.kenandwicky.api.Api
+author: KenKwokandWickyYiu
+description: Funny API
+version: 1.0
+api-version: 1.13
+depend: [SingleCandyCrush, SingleTetris]
+
+commands:
+  setcandycrush:
+   usage: /<command>
+   description: To build the candycrush
+  initializecandycrush:
+   usage: /<command>
+   description: Bug testing command when reloading the server
+  newgame:
+   usage: /<command>
+   description: To allow the game start
+  scanboard:
+   usage: /<command>
+   description: scan the board 
+   
+  
