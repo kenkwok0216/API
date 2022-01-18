@@ -11,19 +11,22 @@ import org.bukkit.plugin.java.JavaPlugin;
 import me.kenandwicky.candycrush.CandyCrush;
 import me.kenandwicky.candycrush.Board.Board;
 import me.kenandwicky.candycrush.GameLoop.Game;
+import me.kenandwicky.candycrush.Listener.EventListener;
 import me.kenandwicky.tetris.Tetris;
-import me.kenandwicky.tetris.GameLoop.Execute;
 
 
 
 
 public class Api extends JavaPlugin implements Listener {
 	private Tetris api1 = (Tetris) Bukkit.getServer().getPluginManager().getPlugin("SingleTetris");
-	
+	private CandyCrush api2 = (CandyCrush) Bukkit.getServer().getPluginManager().getPlugin("SingleCandyCrush");
 	
 	public void onEnable() {
 		Bukkit.getServer().getConsoleSender().sendMessage("api is working");
-		this.getCommand("newgame").setExecutor(new me.kenandwicky.tetris.GameLoop.Execute());
+		Bukkit.getServer().getPluginManager().registerEvents(new com.kenandwicky.api.Listener.EventListener(), this);
+		//this.getCommand("newgame").setExecutor(new me.kenandwicky.tetris.GameLoop.Execute());
+		//this.getCommand("newgame").setExecutor(new me.kenandwicky.candycrush.GameLoop.Execute());
+		this.getCommand("newgame").setExecutor(new com.kenandwicky.api.GameLoop.Execute());
 	}
 	
 	
@@ -31,6 +34,8 @@ public class Api extends JavaPlugin implements Listener {
 		
 			
 		if(cmd.getName().equalsIgnoreCase("newgame")) {
+			sender.sendMessage("i am working");
+			
 			CandyCrush.isStart = true;
 			CandyCrush.game = new Game(CandyCrush.boardclass);
 		}
