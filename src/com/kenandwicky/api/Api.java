@@ -34,11 +34,12 @@ public class Api extends JavaPlugin implements Listener {
 	
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		
+
 			
 		if(cmd.getName().equalsIgnoreCase("newgame")) {
 			sender.sendMessage("i am working");
-			
+			com.kenandwicky.api.tool.AttackVariable.candyattack = 0;
+			com.kenandwicky.api.tool.AttackVariable.tetrisattack = 0;
 			CandyCrush.isStart = true;
 			CandyCrush.game = new Game(CandyCrush.boardclass);
 		}
