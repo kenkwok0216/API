@@ -4,6 +4,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 
 import com.kenandwicky.api.tool.AttackVariable;
+import com.kenandwicky.api.tool.CandyAttackTetris;
+import com.kenandwicky.api.tool.TetrisAttackCandy;
 
 
 
@@ -53,14 +55,15 @@ public class Loop implements Runnable {
 		}
 		
 		
-		if(me.kenandwicky.tetris.Board.Board.GetPlayerline() - AttackVariable.tetrisattack >= 10) {
+		if(me.kenandwicky.tetris.Board.Board.GetPlayerline() - AttackVariable.tetrisattack >= 3) {
 			//Tetris attack Candy
 			AttackVariable.tetrisattack = me.kenandwicky.tetris.Board.Board.GetPlayerline();
+			TetrisAttackCandy.tetrisattackcandy();
 		}
 		if (me.kenandwicky.candycrush.Board.Board.match - AttackVariable.candyattack >= 20) {
 			//Candy attack Tetris
 			AttackVariable.candyattack = me.kenandwicky.candycrush.Board.Board.match;
-			com.kenandwicky.api.tool.CandyAttackTetris.candyattacktetris();
+			CandyAttackTetris.candyattacktetris();
 		}
 		
 	}	
