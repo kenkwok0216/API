@@ -15,9 +15,6 @@ import me.kenandwicky.candycrush.GameLoop.Game;
 import me.kenandwicky.candycrush.Listener.EventListener;
 import me.kenandwicky.tetris.Tetris;
 
-
-
-
 public class Api extends JavaPlugin implements Listener {
 	private Tetris api1 = (Tetris) Bukkit.getServer().getPluginManager().getPlugin("SingleTetris");
 	private CandyCrush api2 = (CandyCrush) Bukkit.getServer().getPluginManager().getPlugin("SingleCandyCrush");
