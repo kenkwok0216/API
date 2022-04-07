@@ -29,7 +29,7 @@ public class Execute implements CommandExecutor {
 		
 		gameLoopID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Api.plugin,
 							loop,
-							0, 5);	
+							0, 15);	
 
 		
 		return true;

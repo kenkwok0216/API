@@ -16,6 +16,7 @@ public class Loop implements Runnable {
 		// if it can move down then move down if not "gamenext"
 		int tetris_score = me.kenandwicky.tetris.Board.Board.Getplayerscore();
 		int candy_score = me.kenandwicky.candycrush.Board.Board.score;
+		
 		if(me.kenandwicky.tetris.Tetris.isStart == false && me.kenandwicky.candycrush.CandyCrush.isStart == true) {
 			Bukkit.getScheduler().cancelTask(Execute.gameLoopID); //stop this tasks
 			me.kenandwicky.candycrush.CandyCrush.isStart = false; //stop candycrush tasks
@@ -55,12 +56,12 @@ public class Loop implements Runnable {
 		}
 		
 		
-		if(me.kenandwicky.tetris.Board.Board.GetPlayerline() - AttackVariable.tetrisattack >= 3) {
+		if(me.kenandwicky.tetris.Board.Board.GetPlayerline() - AttackVariable.tetrisattack >= 2) {
 			//Tetris attack Candy
 			AttackVariable.tetrisattack = me.kenandwicky.tetris.Board.Board.GetPlayerline();
 			TetrisAttackCandy.tetrisattackcandy();
 		}
-		if (me.kenandwicky.candycrush.Board.Board.match - AttackVariable.candyattack >= 20) {
+		if (me.kenandwicky.candycrush.Board.Board.match - AttackVariable.candyattack >= 200) {
 			//Candy attack Tetris
 			AttackVariable.candyattack = me.kenandwicky.candycrush.Board.Board.match;
 			CandyAttackTetris.candyattacktetris();
